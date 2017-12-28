@@ -1,0 +1,1078 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="高性能节点。js图像处理，是调整JPEG、PNG、WebP和TIFF图像大小的最快模块。">
+      
+      
+        <link rel="canonical" href="http://sharp.pixelplumbing.com/api-operation/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="zh">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.5">
+    
+    
+      
+        <title>图像操作 - sharp</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.bcabdff3.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    <body>
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://sharp.pixelplumbing.com/" title="sharp" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                sharp
+              </span>
+              <span class="md-header-nav__topic">
+                图像操作
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/lovell/sharp/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="主页" class="md-tabs__link">
+        主页
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../api-constructor/" title="API" class="md-tabs__link md-tabs__link--active">
+          API
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    sharp
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/lovell/sharp/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="主页" class="md-nav__link">
+      主页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install/" title="安装" class="md-nav__link">
+      安装
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-constructor/" title="构造函数" class="md-nav__link">
+      构造函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-input/" title="输入" class="md-nav__link">
+      输入
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-output/" title="输出" class="md-nav__link">
+      输出
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-resize/" title="调整图片大小" class="md-nav__link">
+      调整图片大小
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-composite/" title="合成图像" class="md-nav__link">
+      合成图像
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        图像操作
+      </label>
+    
+    <a href="./" title="图像操作" class="md-nav__link md-nav__link--active">
+      图像操作
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rotate" title="rotate" class="md-nav__link">
+    rotate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract" title="extract" class="md-nav__link">
+    extract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flip" title="flip" class="md-nav__link">
+    flip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flop" title="flop" class="md-nav__link">
+    flop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharpen" title="sharpen" class="md-nav__link">
+    sharpen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blur" title="blur" class="md-nav__link">
+    blur
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extend" title="extend" class="md-nav__link">
+    extend
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flatten" title="flatten" class="md-nav__link">
+    flatten
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trim" title="trim" class="md-nav__link">
+    trim
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gamma" title="gamma" class="md-nav__link">
+    gamma
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#negate" title="negate" class="md-nav__link">
+    negate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalise" title="normalise" class="md-nav__link">
+    normalise
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalize" title="normalize" class="md-nav__link">
+    normalize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convolve" title="convolve" class="md-nav__link">
+    convolve
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#threshold" title="threshold" class="md-nav__link">
+    threshold
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boolean" title="boolean" class="md-nav__link">
+    boolean
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-colour/" title="颜色操纵" class="md-nav__link">
+      颜色操纵
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-channel/" title="通道操作" class="md-nav__link">
+      通道操作
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-utility/" title="实用程序" class="md-nav__link">
+      实用程序
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../performance/" title="性能" class="md-nav__link">
+      性能
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../changelog/" title="更新日志" class="md-nav__link">
+      更新日志
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rotate" title="rotate" class="md-nav__link">
+    rotate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract" title="extract" class="md-nav__link">
+    extract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flip" title="flip" class="md-nav__link">
+    flip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flop" title="flop" class="md-nav__link">
+    flop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharpen" title="sharpen" class="md-nav__link">
+    sharpen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blur" title="blur" class="md-nav__link">
+    blur
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extend" title="extend" class="md-nav__link">
+    extend
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flatten" title="flatten" class="md-nav__link">
+    flatten
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trim" title="trim" class="md-nav__link">
+    trim
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gamma" title="gamma" class="md-nav__link">
+    gamma
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#negate" title="negate" class="md-nav__link">
+    negate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalise" title="normalise" class="md-nav__link">
+    normalise
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalize" title="normalize" class="md-nav__link">
+    normalize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convolve" title="convolve" class="md-nav__link">
+    convolve
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#threshold" title="threshold" class="md-nav__link">
+    threshold
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boolean" title="boolean" class="md-nav__link">
+    boolean
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/lovell/sharp/edit/master/docs/api-operation.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>图像操作</h1>
+                
+                <h2 id="rotate">rotate<a class="headerlink" href="#rotate" title="Permanent link">&para;</a></h2>
+<p>Rotate the output image by either an explicit angle
+or auto-orient based on the EXIF <code>Orientation</code> tag.</p>
+<p>If an angle is provided, it is converted to a valid 90/180/270deg rotation.
+For example, <code>-450</code> will produce a 270deg rotation.</p>
+<p>If no angle is provided, it is determined from the EXIF data.
+Mirroring is supported and may infer the use of a flip operation.</p>
+<p>The use of <code>rotate</code> implies the removal of the EXIF <code>Orientation</code> tag, if any.</p>
+<p>Method order is important when both rotating and extracting regions,
+for example <code>rotate(x).extract(y)</code> will produce a different result to <code>extract(y).rotate(x)</code>.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>angle</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></strong> angle of rotation, must be a multiple of 90. (optional, default <code>auto</code>)</li>
+</ul>
+<p><strong>示例</strong> </p>
+<pre><code class="javascript">const pipeline = sharp()
+  .rotate()
+  .resize(null, 200)
+  .toBuffer(function (err, outputBuffer, info) {
+    // outputBuffer contains 200px high JPEG image data,
+    // auto-rotated using EXIF Orientation tag
+    // info.width and info.height contain the dimensions of the resized image
+  });
+readableStream.pipe(pipeline);
+</code></pre>
+
+<ul>
+<li>Throws <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></strong> Invalid parameters</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="extract">extract<a class="headerlink" href="#extract" title="Permanent link">&para;</a></h2>
+<p>Extract a region of the image.</p>
+<ul>
+<li>Use <code>extract</code> before <code>resize</code> for pre-resize extraction.</li>
+<li>Use <code>extract</code> after <code>resize</code> for post-resize extraction.</li>
+<li>Use <code>extract</code> before and after for both.</li>
+</ul>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>options</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></strong> <ul>
+<li><code>options.left</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></strong> zero-indexed offset from left edge</li>
+<li><code>options.top</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></strong> zero-indexed offset from top edge</li>
+<li><code>options.width</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></strong> dimension of extracted image</li>
+<li><code>options.height</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></strong> dimension of extracted image</li>
+</ul>
+</li>
+</ul>
+<p><strong>示例</strong> </p>
+<pre><code class="javascript">sharp(input)
+  .extract({ left: left, top: top, width: width, height: height })
+  .toFile(output, function(err) {
+    // Extract a region of the input image, saving in the same format.
+  });
+</code></pre>
+
+<pre><code class="javascript">sharp(input)
+  .extract({ left: leftOffsetPre, top: topOffsetPre, width: widthPre, height: heightPre })
+  .resize(width, height)
+  .extract({ left: leftOffsetPost, top: topOffsetPost, width: widthPost, height: heightPost })
+  .toFile(output, function(err) {
+    // Extract a region, resize, then extract from the resized image
+  });
+</code></pre>
+
+<ul>
+<li>Throws <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></strong> Invalid parameters</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="flip">flip<a class="headerlink" href="#flip" title="Permanent link">&para;</a></h2>
+<p>Flip the image about the vertical Y axis. This always occurs after rotation, if any.
+The use of <code>flip</code> implies the removal of the EXIF <code>Orientation</code> tag, if any.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>flip</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></strong>  (optional, default <code>true</code>)</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="flop">flop<a class="headerlink" href="#flop" title="Permanent link">&para;</a></h2>
+<p>Flop the image about the horizontal X axis. This always occurs after rotation, if any.
+The use of <code>flop</code> implies the removal of the EXIF <code>Orientation</code> tag, if any.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>flop</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></strong>  (optional, default <code>true</code>)</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="sharpen">sharpen<a class="headerlink" href="#sharpen" title="Permanent link">&para;</a></h2>
+<p>Sharpen the image.
+When used without parameters, performs a fast, mild sharpen of the output image.
+When a <code>sigma</code> is provided, performs a slower, more accurate sharpen of the L channel in the LAB colour space.
+Separate control over the level of sharpening in "flat" and "jagged" areas is available.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>sigma</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?</strong> the sigma of the Gaussian mask, where <code>sigma = 1 + radius / 2</code>.</li>
+<li><code>flat</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></strong> the level of sharpening to apply to "flat" areas. (optional, default <code>1.0</code>)</li>
+<li>
+<p><code>jagged</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></strong> the level of sharpening to apply to "jagged" areas. (optional, default <code>2.0</code>)</p>
+</li>
+<li>
+<p>Throws <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></strong> Invalid parameters</p>
+</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="blur">blur<a class="headerlink" href="#blur" title="Permanent link">&para;</a></h2>
+<p>Blur the image.
+When used without parameters, performs a fast, mild blur of the output image.
+When a <code>sigma</code> is provided, performs a slower, more accurate Gaussian blur.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li>
+<p><code>sigma</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?</strong> a value between 0.3 and 1000 representing the sigma of the Gaussian mask, where <code>sigma = 1 + radius / 2</code>.</p>
+</li>
+<li>
+<p>Throws <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></strong> Invalid parameters</p>
+</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="extend">extend<a class="headerlink" href="#extend" title="Permanent link">&para;</a></h2>
+<p>Extends/pads the edges of the image with the colour provided to the <code>background</code> method.
+This operation will always occur after resizing and extraction, if any.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>extend</code> <strong>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</strong> single pixel count to add to all edges or an Object with per-edge counts<ul>
+<li><code>extend.top</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?</strong> </li>
+<li><code>extend.left</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?</strong> </li>
+<li><code>extend.bottom</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?</strong> </li>
+<li><code>extend.right</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?</strong> </li>
+</ul>
+</li>
+</ul>
+<p><strong>示例</strong> </p>
+<pre><code class="javascript">// Resize to 140 pixels wide, then add 10 transparent pixels
+// to the top, left and right edges and 20 to the bottom edge
+sharp(input)
+  .resize(140)
+  .background({r: 0, g: 0, b: 0, alpha: 0})
+  .extend({top: 10, bottom: 20, left: 10, right: 10})
+  ...
+</code></pre>
+
+<ul>
+<li>Throws <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></strong> Invalid parameters</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="flatten">flatten<a class="headerlink" href="#flatten" title="Permanent link">&para;</a></h2>
+<p>Merge alpha transparency channel, if any, with <code>background</code>.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>flatten</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></strong>  (optional, default <code>true</code>)</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="trim">trim<a class="headerlink" href="#trim" title="Permanent link">&para;</a></h2>
+<p>Trim "boring" pixels from all edges that contain values within a percentage similarity of the top-left pixel.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li>
+<p><code>tolerance</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></strong> value between 1 and 99 representing the percentage similarity. (optional, default <code>10</code>)</p>
+</li>
+<li>
+<p>Throws <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></strong> Invalid parameters</p>
+</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="gamma">gamma<a class="headerlink" href="#gamma" title="Permanent link">&para;</a></h2>
+<p>Apply a gamma correction by reducing the encoding (darken) pre-resize at a factor of <code>1/gamma</code>
+then increasing the encoding (brighten) post-resize at a factor of <code>gamma</code>.
+This can improve the perceived brightness of a resized image in non-linear colour spaces.
+JPEG and WebP input images will not take advantage of the shrink-on-load performance optimisation
+when applying a gamma correction.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li>
+<p><code>gamma</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></strong> value between 1.0 and 3.0. (optional, default <code>2.2</code>)</p>
+</li>
+<li>
+<p>Throws <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></strong> Invalid parameters</p>
+</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="negate">negate<a class="headerlink" href="#negate" title="Permanent link">&para;</a></h2>
+<p>Produce the "negative" of the image.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>negate</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></strong>  (optional, default <code>true</code>)</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="normalise">normalise<a class="headerlink" href="#normalise" title="Permanent link">&para;</a></h2>
+<p>Enhance output image contrast by stretching its luminance to cover the full dynamic range.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>normalise</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></strong>  (optional, default <code>true</code>)</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="normalize">normalize<a class="headerlink" href="#normalize" title="Permanent link">&para;</a></h2>
+<p>Alternative spelling of normalise.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>normalize</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></strong>  (optional, default <code>true</code>)</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="convolve">convolve<a class="headerlink" href="#convolve" title="Permanent link">&para;</a></h2>
+<p>Convolve the image with the specified kernel.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>kernel</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></strong> <ul>
+<li><code>kernel.width</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></strong> width of the kernel in pixels.</li>
+<li><code>kernel.height</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></strong> width of the kernel in pixels.</li>
+<li><code>kernel.kernel</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>&gt;</strong> Array of length <code>width*height</code> containing the kernel values.</li>
+<li><code>kernel.scale</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></strong> the scale of the kernel in pixels. (optional, default <code>sum</code>)</li>
+<li><code>kernel.offset</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></strong> the offset of the kernel in pixels. (optional, default <code>0</code>)</li>
+</ul>
+</li>
+</ul>
+<p><strong>示例</strong> </p>
+<pre><code class="javascript">sharp(input)
+  .convolve({
+    width: 3,
+    height: 3,
+    kernel: [-1, 0, 1, -2, 0, 2, -1, 0, 1]
+  })
+  .raw()
+  .toBuffer(function(err, data, info) {
+    // data contains the raw pixel data representing the convolution
+    // of the input image with the horizontal Sobel operator
+  });
+</code></pre>
+
+<ul>
+<li>Throws <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></strong> Invalid parameters</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="threshold">threshold<a class="headerlink" href="#threshold" title="Permanent link">&para;</a></h2>
+<p>Any pixel value greather than or equal to the threshold value will be set to 255, otherwise it will be set to 0.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>threshold</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></strong> a value in the range 0-255 representing the level at which the threshold will be applied. (optional, default <code>128</code>)</li>
+<li>
+<p><code>options</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?</strong> </p>
+<ul>
+<li><code>options.greyscale</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></strong> convert to single channel greyscale. (optional, default <code>true</code>)</li>
+<li><code>options.grayscale</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></strong> alternative spelling for greyscale. (optional, default <code>true</code>)</li>
+</ul>
+</li>
+<li>
+<p>Throws <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></strong> Invalid parameters</p>
+</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="boolean">boolean<a class="headerlink" href="#boolean" title="Permanent link">&para;</a></h2>
+<p>Perform a bitwise boolean operation with operand image.</p>
+<p>This operation creates an output image where each pixel is the result of
+the selected bitwise boolean <code>operation</code> between the corresponding pixels of the input images.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>operand</code> <strong>(<a href="https://nodejs.org/api/buffer.html">Buffer</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</strong> Buffer containing image data or String containing the path to an image file.</li>
+<li><code>operator</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></strong> one of <code>and</code>, <code>or</code> or <code>eor</code> to perform that bitwise operation, like the C logic operators <code>&amp;</code>, <code>|</code> and <code>^</code> respectively.</li>
+<li>
+<p><code>options</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?</strong> </p>
+<ul>
+<li><code>options.raw</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?</strong> describes operand when using raw pixel data.<ul>
+<li><code>options.raw.width</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?</strong> </li>
+<li><code>options.raw.height</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?</strong> </li>
+<li><code>options.raw.channels</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?</strong> </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Throws <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></strong> Invalid parameters</p>
+</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../api-composite/" title="合成图像" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                合成图像
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../api-colour/" title="颜色操纵" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                颜色操纵
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <a href="https://pixelplumbing.com/">pixelplumbing.com</a>
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.6cdc17f0.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              <script src="../assets/javascripts/lunr/lunr.zh.js"></script>
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"0.17.2",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

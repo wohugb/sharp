@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>http://sharp.pixelplumbing.com//</loc>
+     <lastmod>2017-12-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://sharp.pixelplumbing.com//install/</loc>
+     <lastmod>2017-12-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>http://sharp.pixelplumbing.com//api-constructor/</loc>
+     <lastmod>2017-12-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://sharp.pixelplumbing.com//api-input/</loc>
+     <lastmod>2017-12-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://sharp.pixelplumbing.com//api-output/</loc>
+     <lastmod>2017-12-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://sharp.pixelplumbing.com//api-resize/</loc>
+     <lastmod>2017-12-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://sharp.pixelplumbing.com//api-composite/</loc>
+     <lastmod>2017-12-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://sharp.pixelplumbing.com//api-operation/</loc>
+     <lastmod>2017-12-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://sharp.pixelplumbing.com//api-colour/</loc>
+     <lastmod>2017-12-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://sharp.pixelplumbing.com//api-channel/</loc>
+     <lastmod>2017-12-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://sharp.pixelplumbing.com//api-utility/</loc>
+     <lastmod>2017-12-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>http://sharp.pixelplumbing.com//performance/</loc>
+     <lastmod>2017-12-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://sharp.pixelplumbing.com//changelog/</loc>
+     <lastmod>2017-12-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+</urlset>

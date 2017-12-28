@@ -1,0 +1,815 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="高性能节点。js图像处理，是调整JPEG、PNG、WebP和TIFF图像大小的最快模块。">
+      
+      
+        <link rel="canonical" href="http://sharp.pixelplumbing.com/api-resize/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="zh">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.5">
+    
+    
+      
+        <title>调整图片大小 - sharp</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.bcabdff3.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    <body>
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://sharp.pixelplumbing.com/" title="sharp" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                sharp
+              </span>
+              <span class="md-header-nav__topic">
+                调整图片大小
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/lovell/sharp/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="主页" class="md-tabs__link">
+        主页
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../api-constructor/" title="API" class="md-tabs__link md-tabs__link--active">
+          API
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    sharp
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/lovell/sharp/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="主页" class="md-nav__link">
+      主页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install/" title="安装" class="md-nav__link">
+      安装
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-constructor/" title="构造函数" class="md-nav__link">
+      构造函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-input/" title="输入" class="md-nav__link">
+      输入
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-output/" title="输出" class="md-nav__link">
+      输出
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        调整图片大小
+      </label>
+    
+    <a href="./" title="调整图片大小" class="md-nav__link md-nav__link--active">
+      调整图片大小
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resize" title="resize" class="md-nav__link">
+    resize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crop" title="crop" class="md-nav__link">
+    crop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embed" title="embed" class="md-nav__link">
+    embed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#max" title="max" class="md-nav__link">
+    max
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#min" title="min" class="md-nav__link">
+    min
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignoreaspectratio" title="ignoreAspectRatio" class="md-nav__link">
+    ignoreAspectRatio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#withoutenlargement" title="withoutEnlargement" class="md-nav__link">
+    withoutEnlargement
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-composite/" title="合成图像" class="md-nav__link">
+      合成图像
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-operation/" title="图像操作" class="md-nav__link">
+      图像操作
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-colour/" title="颜色操纵" class="md-nav__link">
+      颜色操纵
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-channel/" title="通道操作" class="md-nav__link">
+      通道操作
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-utility/" title="实用程序" class="md-nav__link">
+      实用程序
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../performance/" title="性能" class="md-nav__link">
+      性能
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../changelog/" title="更新日志" class="md-nav__link">
+      更新日志
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resize" title="resize" class="md-nav__link">
+    resize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crop" title="crop" class="md-nav__link">
+    crop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embed" title="embed" class="md-nav__link">
+    embed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#max" title="max" class="md-nav__link">
+    max
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#min" title="min" class="md-nav__link">
+    min
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignoreaspectratio" title="ignoreAspectRatio" class="md-nav__link">
+    ignoreAspectRatio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#withoutenlargement" title="withoutEnlargement" class="md-nav__link">
+    withoutEnlargement
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/lovell/sharp/edit/master/docs/api-resize.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>调整图片大小</h1>
+                
+                <h2 id="resize">resize<a class="headerlink" href="#resize" title="Permanent link">&para;</a></h2>
+<p>Resize image to <code>width</code> x <code>height</code>.
+By default, the resized image is centre cropped to the exact size specified.</p>
+<p>Possible kernels are:</p>
+<ul>
+<li><code>nearest</code>: Use <a href="http://en.wikipedia.org/wiki/Nearest-neighbor_interpolation">nearest neighbour interpolation</a>.</li>
+<li><code>cubic</code>: Use a <a href="https://en.wikipedia.org/wiki/Centripetal_Catmull%E2%80%93Rom_spline">Catmull-Rom spline</a>.</li>
+<li><code>lanczos2</code>: Use a <a href="https://en.wikipedia.org/wiki/Lanczos_resampling#Lanczos_kernel">Lanczos kernel</a> with <code>a=2</code>.</li>
+<li><code>lanczos3</code>: Use a Lanczos kernel with <code>a=3</code> (the default).</li>
+</ul>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>width</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?</strong> pixels wide the resultant image should be. Use <code>null</code> or <code>undefined</code> to auto-scale the width to match the height.</li>
+<li><code>height</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?</strong> pixels high the resultant image should be. Use <code>null</code> or <code>undefined</code> to auto-scale the height to match the width.</li>
+<li><code>options</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?</strong> <ul>
+<li><code>options.kernel</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></strong> the kernel to use for image reduction. (optional, default <code>'lanczos3'</code>)</li>
+<li><code>options.fastShrinkOnLoad</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></strong> take greater advantage of the JPEG and WebP shrink-on-load feature, which can lead to a slight moiré pattern on some images. (optional, default <code>true</code>)</li>
+</ul>
+</li>
+</ul>
+<p><strong>示例</strong> </p>
+<pre><code class="javascript">sharp(inputBuffer)
+  .resize(200, 300, {
+    kernel: sharp.kernel.nearest
+  })
+  .background('white')
+  .embed()
+  .toFile('output.tiff')
+  .then(function() {
+    // output.tiff is a 200 pixels wide and 300 pixels high image
+    // containing a nearest-neighbour scaled version, embedded on a white canvas,
+    // of the image data in inputBuffer
+  });
+</code></pre>
+
+<ul>
+<li>Throws <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></strong> Invalid parameters</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="crop">crop<a class="headerlink" href="#crop" title="Permanent link">&para;</a></h2>
+<p>Crop the resized image to the exact size specified, the default behaviour.</p>
+<p>Possible attributes of the optional <code>sharp.gravity</code> are <code>north</code>, <code>northeast</code>, <code>east</code>, <code>southeast</code>, <code>south</code>,
+<code>southwest</code>, <code>west</code>, <code>northwest</code>, <code>center</code> and <code>centre</code>.</p>
+<p>The experimental strategy-based approach resizes so one dimension is at its target length
+then repeatedly ranks edge regions, discarding the edge with the lowest score based on the selected strategy.</p>
+<ul>
+<li><code>entropy</code>: focus on the region with the highest <a href="https://en.wikipedia.org/wiki/Entropy_%28information_theory%29">Shannon entropy</a>.</li>
+<li><code>attention</code>: focus on the region with the highest luminance frequency, colour saturation and presence of skin tones.</li>
+</ul>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>crop</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></strong> A member of <code>sharp.gravity</code> to crop to an edge/corner or <code>sharp.strategy</code> to crop dynamically. (optional, default <code>'centre'</code>)</li>
+</ul>
+<p><strong>示例</strong> </p>
+<pre><code class="javascript">const transformer = sharp()
+  .resize(200, 200)
+  .crop(sharp.strategy.entropy)
+  .on('error', function(err) {
+    console.log(err);
+  });
+// Read image data from readableStream
+// Write 200px square auto-cropped image data to writableStream
+readableStream.pipe(transformer).pipe(writableStream);
+</code></pre>
+
+<ul>
+<li>Throws <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></strong> Invalid parameters</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="embed">embed<a class="headerlink" href="#embed" title="Permanent link">&para;</a></h2>
+<p>Preserving aspect ratio, resize the image to the maximum <code>width</code> or <code>height</code> specified
+then embed on a background of the exact <code>width</code> and <code>height</code> specified.</p>
+<p>If the background contains an alpha value then WebP and PNG format output images will
+contain an alpha channel, even when the input image does not.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>embed</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></strong> A member of <code>sharp.gravity</code> to embed to an edge/corner. (optional, default <code>'centre'</code>)</li>
+</ul>
+<p><strong>示例</strong> </p>
+<pre><code class="javascript">sharp('input.gif')
+  .resize(200, 300)
+  .background({r: 0, g: 0, b: 0, alpha: 0})
+  .embed()
+  .toFormat(sharp.format.webp)
+  .toBuffer(function(err, outputBuffer) {
+    if (err) {
+      throw err;
+    }
+    // outputBuffer contains WebP image data of a 200 pixels wide and 300 pixels high
+    // containing a scaled version, embedded on a transparent canvas, of input.gif
+  });
+</code></pre>
+
+<ul>
+<li>Throws <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></strong> Invalid parameters</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="max">max<a class="headerlink" href="#max" title="Permanent link">&para;</a></h2>
+<p>Preserving aspect ratio, resize the image to be as large as possible
+while ensuring its dimensions are less than or equal to the <code>width</code> and <code>height</code> specified.</p>
+<p>Both <code>width</code> and <code>height</code> must be provided via <code>resize</code> otherwise the behaviour will default to <code>crop</code>.</p>
+<p><strong>示例</strong> </p>
+<pre><code class="javascript">sharp(inputBuffer)
+  .resize(200, 200)
+  .max()
+  .toFormat('jpeg')
+  .toBuffer()
+  .then(function(outputBuffer) {
+    // outputBuffer contains JPEG image data no wider than 200 pixels and no higher
+    // than 200 pixels regardless of the inputBuffer image dimensions
+  });
+</code></pre>
+
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="min">min<a class="headerlink" href="#min" title="Permanent link">&para;</a></h2>
+<p>Preserving aspect ratio, resize the image to be as small as possible
+while ensuring its dimensions are greater than or equal to the <code>width</code> and <code>height</code> specified.</p>
+<p>Both <code>width</code> and <code>height</code> must be provided via <code>resize</code> otherwise the behaviour will default to <code>crop</code>.</p>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="ignoreaspectratio">ignoreAspectRatio<a class="headerlink" href="#ignoreaspectratio" title="Permanent link">&para;</a></h2>
+<p>Ignoring the aspect ratio of the input, stretch the image to
+the exact <code>width</code> and/or <code>height</code> provided via <code>resize</code>.</p>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="withoutenlargement">withoutEnlargement<a class="headerlink" href="#withoutenlargement" title="Permanent link">&para;</a></h2>
+<p>Do not enlarge the output image if the input image width <em>or</em> height are already less than the required dimensions.
+This is equivalent to GraphicsMagick's <code>&gt;</code> geometry option:
+"<em>change the dimensions of the image only if its width or height exceeds the geometry specification</em>".</p>
+<p>The default behaviour <em>before</em> function call is <code>false</code>, meaning the image will be enlarged.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>withoutEnlargement</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></strong>  (optional, default <code>true</code>)</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../api-output/" title="输出" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                输出
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../api-composite/" title="合成图像" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                合成图像
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <a href="https://pixelplumbing.com/">pixelplumbing.com</a>
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.6cdc17f0.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              <script src="../assets/javascripts/lunr/lunr.zh.js"></script>
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"0.17.2",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

@@ -1,0 +1,761 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="高性能节点。js图像处理，是调整JPEG、PNG、WebP和TIFF图像大小的最快模块。">
+      
+      
+        <link rel="canonical" href="http://sharp.pixelplumbing.com/api-input/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="zh">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.5">
+    
+    
+      
+        <title>输入 - sharp</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.bcabdff3.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    <body>
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://sharp.pixelplumbing.com/" title="sharp" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                sharp
+              </span>
+              <span class="md-header-nav__topic">
+                输入
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/lovell/sharp/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="主页" class="md-tabs__link">
+        主页
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../api-constructor/" title="API" class="md-tabs__link md-tabs__link--active">
+          API
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    sharp
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/lovell/sharp/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="主页" class="md-nav__link">
+      主页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install/" title="安装" class="md-nav__link">
+      安装
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-constructor/" title="构造函数" class="md-nav__link">
+      构造函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        输入
+      </label>
+    
+    <a href="./" title="输入" class="md-nav__link md-nav__link--active">
+      输入
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clone" title="clone" class="md-nav__link">
+    clone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadata" title="metadata" class="md-nav__link">
+    metadata
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stats" title="stats" class="md-nav__link">
+    stats
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitinputpixels" title="limitInputPixels" class="md-nav__link">
+    limitInputPixels
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequentialread" title="sequentialRead" class="md-nav__link">
+    sequentialRead
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-output/" title="输出" class="md-nav__link">
+      输出
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-resize/" title="调整图片大小" class="md-nav__link">
+      调整图片大小
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-composite/" title="合成图像" class="md-nav__link">
+      合成图像
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-operation/" title="图像操作" class="md-nav__link">
+      图像操作
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-colour/" title="颜色操纵" class="md-nav__link">
+      颜色操纵
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-channel/" title="通道操作" class="md-nav__link">
+      通道操作
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-utility/" title="实用程序" class="md-nav__link">
+      实用程序
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../performance/" title="性能" class="md-nav__link">
+      性能
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../changelog/" title="更新日志" class="md-nav__link">
+      更新日志
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clone" title="clone" class="md-nav__link">
+    clone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadata" title="metadata" class="md-nav__link">
+    metadata
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stats" title="stats" class="md-nav__link">
+    stats
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitinputpixels" title="limitInputPixels" class="md-nav__link">
+    limitInputPixels
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequentialread" title="sequentialRead" class="md-nav__link">
+    sequentialRead
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/lovell/sharp/edit/master/docs/api-input.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>输入</h1>
+                
+                <h2 id="clone">clone<a class="headerlink" href="#clone" title="Permanent link">&para;</a></h2>
+<p>Take a "snapshot" of the Sharp instance, returning a new instance.
+Cloned instances inherit the input of their parent instance.
+This allows multiple output Streams and therefore multiple processing pipelines to share a single input Stream.</p>
+<p><strong>示例</strong> </p>
+<pre><code class="javascript">const pipeline = sharp().rotate();
+pipeline.clone().resize(800, 600).pipe(firstWritableStream);
+pipeline.clone().extract({ left: 20, top: 20, width: 100, height: 100 }).pipe(secondWritableStream);
+readableStream.pipe(pipeline);
+// firstWritableStream receives auto-rotated, resized readableStream
+// secondWritableStream receives auto-rotated, extracted region of readableStream
+</code></pre>
+
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="metadata">metadata<a class="headerlink" href="#metadata" title="Permanent link">&para;</a></h2>
+<p>Fast access to (uncached) image metadata without decoding any compressed image data.
+A Promises/A+ promise is returned when <code>callback</code> is not provided.</p>
+<ul>
+<li><code>format</code>: Name of decoder used to decompress image data e.g. <code>jpeg</code>, <code>png</code>, <code>webp</code>, <code>gif</code>, <code>svg</code></li>
+<li><code>width</code>: Number of pixels wide</li>
+<li><code>height</code>: Number of pixels high</li>
+<li><code>space</code>: Name of colour space interpretation e.g. <code>srgb</code>, <code>rgb</code>, <code>cmyk</code>, <code>lab</code>, <code>b-w</code> <a href="https://github.com/jcupitt/libvips/blob/master/libvips/iofuncs/enumtypes.c#L636">...</a></li>
+<li><code>channels</code>: Number of bands e.g. <code>3</code> for sRGB, <code>4</code> for CMYK</li>
+<li><code>depth</code>: Name of pixel depth format e.g. <code>uchar</code>, <code>char</code>, <code>ushort</code>, <code>float</code> <a href="https://github.com/jcupitt/libvips/blob/master/libvips/iofuncs/enumtypes.c#L672">...</a></li>
+<li><code>density</code>: Number of pixels per inch (DPI), if present</li>
+<li><code>hasProfile</code>: Boolean indicating the presence of an embedded ICC profile</li>
+<li><code>hasAlpha</code>: Boolean indicating the presence of an alpha transparency channel</li>
+<li><code>orientation</code>: Number value of the EXIF Orientation header, if present</li>
+<li><code>exif</code>: Buffer containing raw EXIF data, if present</li>
+<li><code>icc</code>: Buffer containing raw <a href="https://www.npmjs.com/package/icc">ICC</a> profile data, if present</li>
+</ul>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>callback</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>?</strong> called with the arguments <code>(err, metadata)</code></li>
+</ul>
+<p><strong>示例</strong> </p>
+<pre><code class="javascript">const image = sharp(inputJpg);
+image
+  .metadata()
+  .then(function(metadata) {
+    return image
+      .resize(Math.round(metadata.width / 2))
+      .webp()
+      .toBuffer();
+  })
+  .then(function(data) {
+    // data contains a WebP image half the width and height of the original JPEG
+  });
+</code></pre>
+
+<p><strong>返回</strong> <strong>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>&gt; | Sharp)</strong> </p>
+<h2 id="stats">stats<a class="headerlink" href="#stats" title="Permanent link">&para;</a></h2>
+<p>Access to pixel-derived image statistics for every channel in the image.
+A Promise is returned when <code>callback</code> is not provided.</p>
+<ul>
+<li><code>channels</code>: Array of channel statistics for each channel in the image. Each channel statistic contains<ul>
+<li><code>min</code> (minimum value in the channel)</li>
+<li><code>max</code> (maximum value in the channel)</li>
+<li><code>sum</code> (sum of all values in a channel)</li>
+<li><code>squaresSum</code> (sum of squared values in a channel)</li>
+<li><code>mean</code> (mean of the values in a channel)</li>
+<li><code>stdev</code> (standard deviation for the values in a channel)</li>
+<li><code>minX</code> (x-coordinate of one of the pixel where the minimum lies)</li>
+<li><code>minY</code> (y-coordinate of one of the pixel where the minimum lies)</li>
+<li><code>maxX</code> (x-coordinate of one of the pixel where the maximum lies)</li>
+<li><code>maxY</code> (y-coordinate of one of the pixel where the maximum lies)</li>
+</ul>
+</li>
+<li><code>isOpaque</code>: Value to identify if the image is opaque or transparent, based on the presence and use of alpha channel</li>
+</ul>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>callback</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>?</strong> called with the arguments <code>(err, stats)</code></li>
+</ul>
+<p><strong>示例</strong> </p>
+<pre><code class="javascript">const image = sharp(inputJpg);
+image
+  .stats()
+  .then(function(stats) {
+     // stats contains the channel-wise statistics array and the isOpaque value
+  });
+</code></pre>
+
+<p><strong>返回</strong> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>&gt;</strong> </p>
+<h2 id="limitinputpixels">limitInputPixels<a class="headerlink" href="#limitinputpixels" title="Permanent link">&para;</a></h2>
+<p>Do not process input images where the number of pixels (width _ height) exceeds this limit.
+Assumes image dimensions contained in the input metadata can be trusted.
+The default limit is 268402689 (0x3FFF _ 0x3FFF) pixels.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li>
+<p><code>limit</code> <strong>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)</strong> an integral Number of pixels, zero or false to remove limit, true to use default limit.</p>
+</li>
+<li>
+<p>Throws <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></strong> Invalid limit</p>
+</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+<h2 id="sequentialread">sequentialRead<a class="headerlink" href="#sequentialread" title="Permanent link">&para;</a></h2>
+<p>An advanced setting that switches the libvips access method to <code>VIPS_ACCESS_SEQUENTIAL</code>.
+This will reduce memory usage and can improve performance on some systems.</p>
+<p>The default behaviour <em>before</em> function call is <code>false</code>, meaning the libvips access method is not sequential.</p>
+<p><strong>参数</strong> </p>
+<ul>
+<li><code>sequentialRead</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></strong>  (optional, default <code>true</code>)</li>
+</ul>
+<p><strong>返回</strong> <strong>Sharp</strong> </p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../api-constructor/" title="构造函数" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                构造函数
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../api-output/" title="输出" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                输出
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <a href="https://pixelplumbing.com/">pixelplumbing.com</a>
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.6cdc17f0.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              <script src="../assets/javascripts/lunr/lunr.zh.js"></script>
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"0.17.2",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

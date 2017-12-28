@@ -1,0 +1,1069 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="高性能节点。js图像处理，是调整JPEG、PNG、WebP和TIFF图像大小的最快模块。">
+      
+      
+        <link rel="canonical" href="http://sharp.pixelplumbing.com/install/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="zh">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.5">
+    
+    
+      
+        <title>安装 - sharp</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.bcabdff3.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    <body>
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://sharp.pixelplumbing.com/" title="sharp" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                sharp
+              </span>
+              <span class="md-header-nav__topic">
+                安装
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/lovell/sharp/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="主页" class="md-tabs__link md-tabs__link--active">
+        主页
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../api-constructor/" title="API" class="md-tabs__link">
+          API
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    sharp
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/lovell/sharp/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="主页" class="md-nav__link">
+      主页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        安装
+      </label>
+    
+    <a href="./" title="安装" class="md-nav__link md-nav__link--active">
+      安装
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="先决条件" class="md-nav__link">
+    先决条件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux" title="Linux" class="md-nav__link">
+    Linux
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alpine-linux" title="Alpine Linux" class="md-nav__link">
+    Alpine Linux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mac-os" title="Mac OS" class="md-nav__link">
+    Mac OS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows-x64" title="Windows x64" class="md-nav__link">
+    Windows x64
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#freebsd" title="FreeBSD" class="md-nav__link">
+    FreeBSD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#heroku" title="Heroku" class="md-nav__link">
+    Heroku
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" title="Docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws-lambda" title="AWS Lambda" class="md-nav__link">
+    AWS Lambda
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="构建工具" class="md-nav__link">
+    构建工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="代码工具" class="md-nav__link">
+    代码工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli" title="CLI 工具" class="md-nav__link">
+    CLI 工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="安全" class="md-nav__link">
+    安全
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-compiled-libvips-binaries" title="Pre-compiled libvips binaries" class="md-nav__link">
+    Pre-compiled libvips binaries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="证书" class="md-nav__link">
+    证书
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-constructor/" title="构造函数" class="md-nav__link">
+      构造函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-input/" title="输入" class="md-nav__link">
+      输入
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-output/" title="输出" class="md-nav__link">
+      输出
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-resize/" title="调整图片大小" class="md-nav__link">
+      调整图片大小
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-composite/" title="合成图像" class="md-nav__link">
+      合成图像
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-operation/" title="图像操作" class="md-nav__link">
+      图像操作
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-colour/" title="颜色操纵" class="md-nav__link">
+      颜色操纵
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-channel/" title="通道操作" class="md-nav__link">
+      通道操作
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-utility/" title="实用程序" class="md-nav__link">
+      实用程序
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../performance/" title="性能" class="md-nav__link">
+      性能
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../changelog/" title="更新日志" class="md-nav__link">
+      更新日志
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="先决条件" class="md-nav__link">
+    先决条件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux" title="Linux" class="md-nav__link">
+    Linux
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alpine-linux" title="Alpine Linux" class="md-nav__link">
+    Alpine Linux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mac-os" title="Mac OS" class="md-nav__link">
+    Mac OS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows-x64" title="Windows x64" class="md-nav__link">
+    Windows x64
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#freebsd" title="FreeBSD" class="md-nav__link">
+    FreeBSD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#heroku" title="Heroku" class="md-nav__link">
+    Heroku
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" title="Docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws-lambda" title="AWS Lambda" class="md-nav__link">
+    AWS Lambda
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="构建工具" class="md-nav__link">
+    构建工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="代码工具" class="md-nav__link">
+    代码工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli" title="CLI 工具" class="md-nav__link">
+    CLI 工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="安全" class="md-nav__link">
+    安全
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-compiled-libvips-binaries" title="Pre-compiled libvips binaries" class="md-nav__link">
+    Pre-compiled libvips binaries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="证书" class="md-nav__link">
+    证书
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/lovell/sharp/edit/master/docs/install.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<pre><code class="sh">npm install sharp
+</code></pre>
+
+<pre><code class="sh">yarn add sharp
+</code></pre>
+
+<h3 id="_2">先决条件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Node v4.5.0+</li>
+<li>C++11 compatible compiler such as gcc 4.8+, clang 3.0+ or MSVC 2013+</li>
+<li><a href="https://github.com/TooTallNate/node-gyp#installation">node-gyp</a> and its dependencies (includes Python)</li>
+</ul>
+<h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
+<p><a href="https://travis-ci.org/lovell/sharp"><img alt="Ubuntu 16.04 Build Status" src="https://travis-ci.org/lovell/sharp.png?branch=master" /></a>
+<a href="https://circleci.com/gh/lovell/sharp"><img alt="Linux Build Status" src="https://circleci.com/gh/lovell/sharp.svg?style=svg&amp;circle-token=6cb6d1d287a51af83722b19ed8885377fbc85e5c" /></a></p>
+<p>libvips and its dependencies are fetched and stored within <code>node_modules/sharp/vendor</code> during <code>npm install</code>.
+This involves an automated HTTPS download of approximately 7MB.</p>
+<p>Most recent Linux-based operating systems with glibc running on x64 and ARMv6+ CPUs should "just work", e.g.:</p>
+<ul>
+<li>Debian 7, 8</li>
+<li>Ubuntu 14.04, 16.04</li>
+<li>Centos 7</li>
+<li>Fedora</li>
+<li>openSUSE 13.2</li>
+<li>Archlinux</li>
+<li>Raspbian Jessie</li>
+<li>Amazon Linux 2017.03.1</li>
+<li>Solus</li>
+</ul>
+<p>To use a globally-installed version of libvips instead of the provided binaries,
+make sure it is at least the version listed under <code>config.libvips</code> in the <code>package.json</code> file
+and that it can be located using <code>pkg-config --modversion vips-cpp</code>.</p>
+<p>If you are using non-stadard paths (anything other than <code>/usr</code> or <code>/usr/local</code>),
+you might need to set <code>PKG_CONFIG_PATH</code> during <code>npm install</code>
+and <code>LD_LIBRARY_PATH</code> at runtime.</p>
+<p>This allows the use of newer versions of libvips with older versions of sharp.</p>
+<p>For 32-bit Intel CPUs and older Linux-based operating systems such as Centos 6,
+it is recommended to install a system-wide installation of libvips from source:</p>
+<p>https://jcupitt.github.io/libvips/install.html#building-libvips-from-a-source-tarball</p>
+<h4 id="alpine-linux">Alpine Linux<a class="headerlink" href="#alpine-linux" title="Permanent link">&para;</a></h4>
+<p>libvips is available in the
+<a href="https://pkgs.alpinelinux.org/packages?name=vips-dev">testing repository</a>:</p>
+<pre><code class="sh">apk add vips-dev fftw-dev --update-cache --repository https://dl-3.alpinelinux.org/alpine/edge/testing/
+</code></pre>
+
+<p>The smaller stack size of musl libc means
+libvips may need to be used without a cache
+via <code>sharp.cache(false)</code> to avoid a stack overflow.</p>
+<h3 id="mac-os">Mac OS<a class="headerlink" href="#mac-os" title="Permanent link">&para;</a></h3>
+<p><a href="https://travis-ci.org/lovell/sharp"><img alt="OS X 10.9.5 Build Status" src="https://travis-ci.org/lovell/sharp.png?branch=master" /></a></p>
+<p>libvips and its dependencies are fetched and stored within <code>node_modules/sharp/vendor</code> during <code>npm install</code>.
+This involves an automated HTTPS download of approximately 7MB.</p>
+<p>To use your own version of libvips instead of the provided binaries, make sure it is
+at least the version listed under <code>config.libvips</code> in the <code>package.json</code> file and
+that it can be located using <code>pkg-config --modversion vips-cpp</code>.</p>
+<h3 id="windows-x64">Windows x64<a class="headerlink" href="#windows-x64" title="Permanent link">&para;</a></h3>
+<p><a href="https://ci.appveyor.com/project/lovell/sharp"><img alt="Windows x64 Build Status" src="https://ci.appveyor.com/api/projects/status/pgtul704nkhhg6sg" /></a></p>
+<p>libvips and its dependencies are fetched and stored within <code>node_modules\sharp\vendor</code> during <code>npm install</code>.
+This involves an automated HTTPS download of approximately 12MB.</p>
+<p>Only 64-bit (x64) <code>node.exe</code> is supported.</p>
+<h3 id="freebsd">FreeBSD<a class="headerlink" href="#freebsd" title="Permanent link">&para;</a></h3>
+<p>libvips must be installed before <code>npm install</code> is run.</p>
+<p>This can be achieved via package or ports:</p>
+<pre><code class="sh">pkg install -y pkgconf vips
+</code></pre>
+
+<pre><code class="sh">cd /usr/ports/graphics/vips/ &amp;&amp; make install clean
+</code></pre>
+
+<p>FreeBSD's gcc v4 and v5 need <code>CXXFLAGS=-D_GLIBCXX_USE_C99</code> set for C++11 support due to
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=193528</p>
+<h3 id="heroku">Heroku<a class="headerlink" href="#heroku" title="Permanent link">&para;</a></h3>
+<p>libvips and its dependencies are fetched and stored within <code>node_modules\sharp\vendor</code> during <code>npm install</code>.
+This involves an automated HTTPS download of approximately 7MB.</p>
+<p>Set <a href="https://devcenter.heroku.com/articles/nodejs-support#cache-behavior">NODE_MODULES_CACHE</a>
+to <code>false</code> when using the <code>yarn</code> package manager.</p>
+<h3 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/marcbachmann">Marc Bachmann</a> maintains an
+<a href="https://github.com/marcbachmann/dockerfile-libvips">Ubuntu-based Dockerfile for libvips</a>.</p>
+<pre><code class="sh">docker pull marcbachmann/libvips
+</code></pre>
+
+<p><a href="https://github.com/wjordan">Will Jordan</a> maintains an
+<a href="https://github.com/wjordan/dockerfile-libvips">Alpine-based Dockerfile for libvips</a>.</p>
+<pre><code class="sh">docker pull wjordan/libvips
+</code></pre>
+
+<p><a href="https://github.com/TailorBrands">Tailor Brands</a> maintain
+<a href="https://github.com/TailorBrands/docker-libvips">Debian-based Dockerfiles for libvips and nodejs</a>.</p>
+<pre><code class="sh">docker pull tailor/docker-libvips
+</code></pre>
+
+<h3 id="aws-lambda">AWS Lambda<a class="headerlink" href="#aws-lambda" title="Permanent link">&para;</a></h3>
+<p>A <a href="http://docs.aws.amazon.com/lambda/latest/dg/nodejs-create-deployment-pkg.html">deployment package</a> for the
+<a href="http://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html">Lambda Execution Environment</a>
+can be built using Docker.</p>
+<pre><code class="sh">rm -rf node_modules/sharp
+docker run -v &quot;$PWD&quot;:/var/task lambci/lambda:build-nodejs6.10 npm install
+</code></pre>
+
+<p>Set the Lambda runtime to Node.js 6.10.</p>
+<p>To get the best performance select the largest memory available. A 1536 MB function provides ~12x more CPU time than a 128 MB function.</p>
+<h3 id="_3">构建工具<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.npmjs.com/package/gulp-responsive">gulp-responsive</a></li>
+<li><a href="https://www.npmjs.com/package/grunt-sharp">grunt-sharp</a></li>
+</ul>
+<h3 id="_4">代码工具<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.npmjs.com/package/@types/sharp">Sharp TypeScript Types</a></li>
+</ul>
+<h3 id="cli">CLI 工具<a class="headerlink" href="#cli" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.npmjs.com/package/sharp-cli">sharp-cli</a></li>
+</ul>
+<h3 id="_5">安全<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Many users of this module process untrusted, user-supplied images,
+but there are aspects of security to consider when doing so.</p>
+<p>It is possible to compile libvips with support for various third-party image loaders.
+Each of these libraries has undergone differing levels of security testing.</p>
+<p>Whilst tools such as <a href="http://lcamtuf.coredump.cx/afl/">American Fuzzy Lop</a>
+and <a href="http://valgrind.org/">Valgrind</a> have been used to test
+the most popular web-based formats, as well as libvips itself,
+you are advised to perform your own testing and sandboxing.</p>
+<p>ImageMagick in particular has a relatively large attack surface,
+which can be partially mitigated with a
+<a href="http://www.imagemagick.org/script/resources.php">policy.xml</a>
+configuration file to prevent the use of coders known to be vulnerable.</p>
+<pre><code class="xml">&lt;policymap&gt;
+  &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;EPHEMERAL&quot; /&gt;
+  &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;URL&quot; /&gt;
+  &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;HTTPS&quot; /&gt;
+  &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;MVG&quot; /&gt;
+  &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;MSL&quot; /&gt;
+  &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;TEXT&quot; /&gt;
+  &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;SHOW&quot; /&gt;
+  &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;WIN&quot; /&gt;
+  &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;PLT&quot; /&gt;
+&lt;/policymap&gt;
+</code></pre>
+
+<p>Set the <code>MAGICK_CONFIGURE_PATH</code> environment variable
+to the directory containing the <code>policy.xml</code> file.</p>
+<h3 id="pre-compiled-libvips-binaries">Pre-compiled libvips binaries<a class="headerlink" href="#pre-compiled-libvips-binaries" title="Permanent link">&para;</a></h3>
+<p>If a global installation of libvips that meets the
+minimum version requirement cannot be found,
+this module will attempt to download a pre-compiled bundle of libvips
+and its dependencies on Linux and Windows machines.</p>
+<p>Should you need to manually download and inspect these files,
+you can do so via https://github.com/lovell/sharp-libvips/releases</p>
+<p>Should you wish to install these from your own location,
+set the <code>SHARP_DIST_BASE_URL</code> environment variable, e.g.</p>
+<pre><code class="sh">SHARP_DIST_BASE_URL=&quot;https://hostname/path/&quot; npm install sharp
+</code></pre>
+
+<p>to use <code>https://hostname/path/libvips-x.y.z-platform.tar.gz</code>.</p>
+<h3 id="_6">证书<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>This module is licensed under the terms of the
+<a href="https://github.com/lovell/sharp/blob/master/LICENSE">Apache 2.0 Licence</a>.</p>
+<p>The libraries downloaded and used by this module
+are done so under the terms of the following licences,
+all of which are compatible with the Apache 2.0 Licence.</p>
+<p>Use of libraries under the terms of the LGPLv3 is via the
+"any later version" clause of the LGPLv2 or LGPLv2.1.</p>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Used under the terms of</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cairo</td>
+<td>Mozilla Public License 2.0</td>
+</tr>
+<tr>
+<td>expat</td>
+<td>MIT Licence</td>
+</tr>
+<tr>
+<td>fontconfig</td>
+<td><a href="https://cgit.freedesktop.org/fontconfig/tree/COPYING">fontconfig Licence</a> (BSD-like)</td>
+</tr>
+<tr>
+<td>freetype</td>
+<td><a href="http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/FTL.TXT">freetype Licence</a> (BSD-like)</td>
+</tr>
+<tr>
+<td>giflib</td>
+<td>MIT Licence</td>
+</tr>
+<tr>
+<td>glib</td>
+<td>LGPLv3</td>
+</tr>
+<tr>
+<td>harfbuzz</td>
+<td>MIT Licence</td>
+</tr>
+<tr>
+<td>lcms</td>
+<td>MIT Licence</td>
+</tr>
+<tr>
+<td>libcroco</td>
+<td>LGPLv3</td>
+</tr>
+<tr>
+<td>libexif</td>
+<td>LGPLv3</td>
+</tr>
+<tr>
+<td>libffi</td>
+<td>MIT Licence</td>
+</tr>
+<tr>
+<td>libgsf</td>
+<td>LGPLv3</td>
+</tr>
+<tr>
+<td>libjpeg-turbo</td>
+<td><a href="https://github.com/libjpeg-turbo/libjpeg-turbo/blob/master/LICENSE.md">zlib License, IJG License</a></td>
+</tr>
+<tr>
+<td>libpng</td>
+<td><a href="http://www.libpng.org/pub/png/src/libpng-LICENSE.txt">libpng License</a></td>
+</tr>
+<tr>
+<td>librsvg</td>
+<td>LGPLv3</td>
+</tr>
+<tr>
+<td>libtiff</td>
+<td><a href="http://www.libtiff.org/misc.html">libtiff License</a> (BSD-like)</td>
+</tr>
+<tr>
+<td>libvips</td>
+<td>LGPLv3</td>
+</tr>
+<tr>
+<td>libwebp</td>
+<td>New BSD License</td>
+</tr>
+<tr>
+<td>libxml2</td>
+<td>MIT Licence</td>
+</tr>
+<tr>
+<td>pango</td>
+<td>LGPLv3</td>
+</tr>
+<tr>
+<td>pixman</td>
+<td>MIT Licence</td>
+</tr>
+<tr>
+<td>zlib</td>
+<td><a href="https://github.com/madler/zlib/blob/master/zlib.h">zlib Licence</a></td>
+</tr>
+</tbody>
+</table>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="主页" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                主页
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../api-constructor/" title="构造函数" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                构造函数
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <a href="https://pixelplumbing.com/">pixelplumbing.com</a>
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.6cdc17f0.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              <script src="../assets/javascripts/lunr/lunr.zh.js"></script>
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"0.17.2",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
