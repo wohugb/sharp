@@ -18,7 +18,7 @@ the installation of any external runtime dependencies.
 
 [![Test Coverage](https://coveralls.io/repos/lovell/sharp/badge.png?branch=master)](https://coveralls.io/r/lovell/sharp?branch=master)
 
-### Formats
+### 格式
 
 This module supports reading JPEG, PNG, WebP, TIFF, GIF and SVG images.
 
@@ -33,7 +33,7 @@ suitable for use with "slippy map" tile viewers like
 [OpenSeadragon](https://github.com/openseadragon/openseadragon)
 and [Leaflet](https://github.com/turban/Leaflet.Zoomify).
 
-### Fast
+### 快
 
 This module is powered by the blazingly fast
 [libvips](https://github.com/jcupitt/libvips) image processing library,
@@ -48,7 +48,7 @@ taking full advantage of multiple CPU cores and L1/L2/L3 cache.
 Everything remains non-blocking thanks to _libuv_,
 no child processes are spawned and Promises/A+ are supported.
 
-### Optimal
+### 最佳
 
 Huffman tables are optimised when generating JPEG output images
 without having to use separate command line tools like
@@ -59,12 +59,12 @@ PNG filtering is disabled by default,
 which for diagrams and line art often produces the same result
 as [pngcrush](https://pmt.sourceforge.io/pngcrush/).
 
-### Contributing
+### 贡献
 
 A [guide for contributors](https://github.com/lovell/sharp/blob/master/CONTRIBUTING.md)
 covers reporting bugs, requesting features and submitting code changes.
 
-### Credits
+### 工作人员
 
 This module would never have been possible without
 the help and code contributions of the following people:
@@ -108,7 +108,7 @@ the help and code contributions of the following people:
 
 Thank you!
 
-### Licence
+### 证书
 
 Copyright 2013, 2014, 2015, 2016, 2017 Lovell Fuller and contributors.
 

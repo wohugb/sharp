@@ -1,12 +1,12 @@
 # Performance
 
-### Test environment
+### 测试环境
 
 * AWS EC2 eu-central-1 [c4.xlarge](http://aws.amazon.com/ec2/instance-types/#c4) (4x E5-2666 v3 @ 2.90GHz)
 * Ubuntu 16.04.1 LTS (HVM, SSD, 20161115, ami-82cf0aed)
 * Node.js v6.9.1
 
-### The contenders
+### 竞争者
 
 * [jimp](https://www.npmjs.com/package/jimp) v0.2.27 - Image processing in pure JavaScript. Bilinear interpolation only.
 * [lwip](https://www.npmjs.com/package/lwip) v0.0.9 - Wrapper around CImg. Compiles outdated, insecure dependencies from source.
@@ -16,15 +16,15 @@
 * [gm](https://www.npmjs.com/package/gm) v1.23.0 - Fully featured wrapper around GraphicsMagick's `gm` command line utility.
 * sharp v0.17.0 / libvips v8.4.2 - Caching within libvips disabled to ensure a fair comparison.
 
-### The task
+### 任务
 
 Decompress a 2725x2225 JPEG image,
 resize to 720x588 using Lanczos 3 resampling (where available),
 then compress to JPEG at a "quality" setting of 80.
 
-### Results
+### 结果
 
-| Module             | Input  | Output | Ops/sec | Speed-up |
+| 模块             | 输入  | 输出 | Ops/sec | Speed-up |
 | :----------------- | :----- | :----- | ------: | -------: |
 | jimp (bilinear)    | buffer | buffer |    1.06 |      1.0 |
 | lwip               | buffer | buffer |    1.87 |      1.8 |
@@ -44,7 +44,7 @@ and using 8+ core machines, especially those with larger L1/L2 CPU caches.
 
 The I/O limits of the relevant (de)compression library will generally determine maximum throughput.
 
-### Benchmark test prerequisites
+### 基准测试先决条件
 
 Requires both _ImageMagick_ and _GraphicsMagick_:
 
@@ -61,7 +61,7 @@ sudo apt-get install imagemagick libmagick++-dev graphicsmagick
 sudo yum install ImageMagick-devel ImageMagick-c++-devel GraphicsMagick
 ```
 
-### Running the benchmark test
+### 运行基准测试
 
 ```sh
 git clone https://github.com/lovell/sharp.git

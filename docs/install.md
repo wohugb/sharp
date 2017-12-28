@@ -1,4 +1,4 @@
-# Installation
+# 安装
 
 ```sh
 npm install sharp
@@ -8,7 +8,7 @@ npm install sharp
 yarn add sharp
 ```
 
-### Prerequisites
+### 先决条件
 
 * Node v4.5.0+
 * C++11 compatible compiler such as gcc 4.8+, clang 3.0+ or MSVC 2013+
@@ -145,20 +145,20 @@ Set the Lambda runtime to Node.js 6.10.
 
 To get the best performance select the largest memory available. A 1536 MB function provides ~12x more CPU time than a 128 MB function.
 
-### Build tools
+### 构建工具
 
 * [gulp-responsive](https://www.npmjs.com/package/gulp-responsive)
 * [grunt-sharp](https://www.npmjs.com/package/grunt-sharp)
 
-### Coding tools
+### 代码工具
 
 * [Sharp TypeScript Types](https://www.npmjs.com/package/@types/sharp)
 
-### CLI tools
+### CLI 工具
 
 * [sharp-cli](https://www.npmjs.com/package/sharp-cli)
 
-### Security
+### 安全
 
 Many users of this module process untrusted, user-supplied images,
 but there are aspects of security to consider when doing so.
@@ -212,7 +212,7 @@ SHARP_DIST_BASE_URL="https://hostname/path/" npm install sharp
 
 to use `https://hostname/path/libvips-x.y.z-platform.tar.gz`.
 
-### Licences
+### 证书
 
 This module is licensed under the terms of the
 [Apache 2.0 Licence](https://github.com/lovell/sharp/blob/master/LICENSE).
